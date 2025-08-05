@@ -6,14 +6,11 @@ import { useDebouncedCallback } from 'use-debounce';
 
 // Import Components
 import Navbar from '@/components/landing/Navbar';
-import Footer from '@/components/landing/Footer';
 import HeroSection from '@/components/landing/HeroSection';
 import AboutSection from '@/components/landing/AboutSection';
 import SkillsSection from '@/components/landing/SkillsSection';
 import ProjectsSection from '@/components/landing/ProjectsSection';
-import ExperienceSection from '@/components/landing/ExperienceSection';
 import EducationSection from '@/components/landing/EducationSection';
-import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import ContactSection from '@/components/landing/ContactSection';
 
 const sections = [
@@ -21,9 +18,7 @@ const sections = [
   { id: 'about', Component: AboutSection },
   { id: 'skills', Component: SkillsSection },
   { id: 'projects', Component: ProjectsSection },
-  { id: 'experience', Component: ExperienceSection },
   { id: 'education', Component: EducationSection },
-  { id: 'testimonials', Component: TestimonialsSection },
   { id: 'contact', Component: ContactSection },
 ];
 
@@ -91,7 +86,6 @@ export default function HomePage() {
           <ActiveComponent />
         </motion.div>
       </AnimatePresence>
-      <Footer />
     </motion.div>
   );
 }

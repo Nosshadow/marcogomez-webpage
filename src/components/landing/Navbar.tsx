@@ -8,14 +8,12 @@ interface NavbarProps {
 }
 
 const sections = [
-  'Hero',
-  'About',
-  'Skills',
-  'Projects',
-  'Experience',
-  'Education',
-  'Testimonials',
-  'Contact',
+  { id: 'Hero', label: 'Inicio' },
+  { id: 'About', label: 'Sobre Mí' },
+  { id: 'Skills', label: 'Habilidades' },
+  { id: 'Projects', label: 'Proyectos' },
+  { id: 'Education', label: 'Educación' },
+  { id: 'Contact', label: 'Contacto' },
 ];
 
 const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
@@ -24,12 +22,12 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       <div className="flex justify-center space-x-4">
         {sections.map((section) => (
           <Button
-            key={section}
-            variant={activeSection === section.toLowerCase() ? 'solid' : 'light'}
-            onPress={() => setActiveSection(section.toLowerCase())}
+            key={section.id}
+            variant={activeSection === section.id.toLowerCase() ? 'solid' : 'light'}
+            onPress={() => setActiveSection(section.id.toLowerCase())}
             className="capitalize"
           >
-            {section}
+            {section.label}
           </Button>
         ))}
       </div>

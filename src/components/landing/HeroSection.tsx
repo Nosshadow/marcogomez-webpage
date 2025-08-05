@@ -28,7 +28,7 @@ const HeroSection = () => {
       animate="visible"
     >
       <motion.div variants={itemVariants}>
-        <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" className="w-32 h-32 text-large mb-4" />
+        <Avatar src="/avatar.webp" className="w-32 h-32 text-large mb-4" />
       </motion.div>
       <motion.h1 variants={itemVariants} className="text-5xl font-bold mb-2">
         Tu Nombre Aquí
