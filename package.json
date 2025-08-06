@@ -6,7 +6,8 @@
     "dev": "bunx next dev --turbopack",
     "build": "bunx next build",
     "start": "bunx next start",
-    "lint": "bunx next lint"
+    "lint": "bunx next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "@heroui/react": "^2.8.2",
@@ -27,6 +28,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
+    "husky": "^9.1.7",
     "tailwindcss": "^4.1.11",
     "typescript": "^5"
   },

@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+. "$(dirname "$0")/h"
+
+# --- Script para verificar la sincronización ---
+
+# Obtiene el nombre de la rama actual
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Ignora la verificación en la rama 'main' o 'develop'
+if [ "$current_branch" = "main" ] || [ "$current_branch" = "develop" ]; then
+    echo "Saltando la verificación de sincronización para la rama principal."
+    exit 0
+fi
+
+# Obtiene la última versión del repositorio remoto sin fusionarla
+git fetch origin
+
+# Compara la rama local con la rama remota
+local_hash=$(git rev-parse HEAD)
+remote_hash=$(git rev-parse @{u})
+
+if [ "$local_hash" != "$remote_hash" ]; then
+    echo ""
+    echo "¡ERROR: Tu rama no está sincronizada con la rama remota!"
+    echo "Por favor, haz 'git pull' para traer los últimos cambios y resolver los conflictos."
+    echo "El push ha sido cancelado."
+    echo ""
+    exit 1 # Evita que el push se complete
+fi
+
+exit 0
