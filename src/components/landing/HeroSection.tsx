@@ -37,7 +37,7 @@ const HeroSection = () => {
         Programador Junior & Contador Público: Soluciones Integrales para tu Negocio Digital
       </motion.h2>
       <motion.p variants={itemVariants} className="max-w-2xl mb-6">
-        Apasionado por el código y los números, combinando la lógica de programación con la precisión contable para optimizar procesos y generar valor.
+        Apasionado por el código y los números, combinando la lógica de programación con la precisión contable para optimizar procesos y generar valor. (prueba)
       </motion.p>
       <motion.div variants={itemVariants}>
         <Button color="primary" size="lg" endContent={<ArrowRight />}>
